@@ -1,4 +1,5 @@
-while true do
+sruvivors_esp = nil
+while sruvivors_esp do
 	for _, player in pairs(game.Players:GetPlayers()) do
 		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
 			if player.Team.Name == "Survivors" then
