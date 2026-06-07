@@ -15,6 +15,7 @@ while true do
 					end
 				end
 			end
+		end
 	end
 	task.wait(1)
 end
