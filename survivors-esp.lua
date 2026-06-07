@@ -1,18 +1,17 @@
 while true do
 	for _, player in pairs(game.Players:GetPlayers()) do
-		if player ~= game.Players.LocalPlayer then
-			if workspace:FindFirstChild(player.Name) then
-				if player.Team.Name == "Survivors" then
-					if not workspace[player.Name]:FindFirstChild("Highlight") then
-						h = Instance.new("Highlight")
-						h.FillColor = player.TeamColor.Color
-						h.OutlineColor = player.TeamColor.Color
-						h.Parent = workspace[player.Name]
-					end
-				else
-					if workspace[player.Name]:FindFirstChild("Highlight") then
-						workspace[player.Name].Highlight:Destroy()
-					end
+		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
+			if player.Team.Name == "Survivors" then
+				if not workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
+					h = Instance.new("Highlight")
+					h.Name = "SurvivorHighlight"
+					h.FillColor = player.TeamColor.Color
+					h.OutlineColor = player.TeamColor.Color
+					h.Parent = workspace[player.Name]
+				end
+			else
+				if workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
+					workspace[player.Name].SurvivorHighlight:Destroy()
 				end
 			end
 		end
