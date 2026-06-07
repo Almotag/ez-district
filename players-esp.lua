@@ -1,7 +1,7 @@
-sruvivors_esp = nil
+survivors_esp = nil
 killer_esp = nil
 
-while sruvivors_esp do
+while survivors_esp do
 	for _, player in pairs(game.Players:GetPlayers()) do
 		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
 			if player.Team.Name == "Survivors" then
