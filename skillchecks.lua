@@ -1,11 +1,17 @@
 local VirtualInputManager = game:GetService("VirtualInputManager")
-lplayer = game.Players.LocalPlayer
-line = lplayer.PlayerGui.SkillCheckPromptGui.Check.Line
-goal = lplayer.PlayerGui.SkillCheckPromptGui.Check.Goal
+local lplayer = game.Players.LocalPlayer
+
 while true do
-	if line.Rotation-105 >= goal.Rotation then
-		VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
-		VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+	local gui = lplayer.PlayerGui:FindFirstChild("SkillCheckPromptGui")
+
+	if gui then
+		local line = gui.Check.Line
+		local goal = gui.Check.Goal
+
+		if line.Rotation - 105 >= goal.Rotation then
+			VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+			VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+		end
 	end
 	task.wait(0.01)
 end
