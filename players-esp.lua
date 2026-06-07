@@ -1,44 +1,48 @@
-survivors_esp = nil
-killer_esp = nil
+survivors_esp = false
+killer_esp = false
 
-while survivors_esp do
-	for _, player in pairs(game.Players:GetPlayers()) do
-		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
-			if player.Team.Name == "Survivors" then
-				if not workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
-					h = Instance.new("Highlight")
-					h.Name = "SurvivorHighlight"
-					h.FillColor = player.TeamColor.Color
-					h.OutlineColor = player.TeamColor.Color
-					h.Parent = workspace[player.Name]
-				end
-			else
-				if workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
-					workspace[player.Name].SurvivorHighlight:Destroy()
+task.spawn(function()
+	while survivors_esp do
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
+				if player.Team.Name == "Survivors" then
+					if not workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
+						h = Instance.new("Highlight")
+						h.Name = "SurvivorHighlight"
+						h.FillColor = player.TeamColor.Color
+						h.OutlineColor = player.TeamColor.Color
+						h.Parent = workspace[player.Name]
+					end
+				else
+					if workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
+						workspace[player.Name].SurvivorHighlight:Destroy()
+					end
 				end
 			end
 		end
+		task.wait(1)
 	end
-	task.wait(1)
-end
+end)
 
-while killer_esp do
-	for _, player in pairs(game.Players:GetPlayers()) do
-		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
-			if player.Team.Name == "Killer" then
-				if not workspace[player.Name]:FindFirstChild("KillerHighlight") then
-					h = Instance.new("Highlight")
-					h.Name = "KillerHighlight"
-					h.FillColor = player.TeamColor.Color
-					h.OutlineColor = player.TeamColor.Color
-					h.Parent = workspace[player.Name]
-				end
-			else
-				if workspace[player.Name]:FindFirstChild("KillerHighlight") then
-					workspace[player.Name].KillerHighlight:Destroy()
+task.spawn(function()
+	while killer_esp do
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
+				if player.Team.Name == "Killer" then
+					if not workspace[player.Name]:FindFirstChild("KillerHighlight") then
+						h = Instance.new("Highlight")
+						h.Name = "KillerHighlight"
+						h.FillColor = player.TeamColor.Color
+						h.OutlineColor = player.TeamColor.Color
+						h.Parent = workspace[player.Name]
+					end
+				else
+					if workspace[player.Name]:FindFirstChild("KillerHighlight") then
+						workspace[player.Name].KillerHighlight:Destroy()
+					end
 				end
 			end
 		end
+		task.wait(1)
 	end
-	task.wait(1)
-end
+end)
