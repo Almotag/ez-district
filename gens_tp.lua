@@ -150,7 +150,7 @@ local Player = Players.LocalPlayer
 local playerGui = Player and Player:FindFirstChild("PlayerGui")
 if playerGui then
     for _, gui in ipairs(playerGui:GetChildren()) do
-        if gui:IsA("BillboardGui") and string.sub(gui.Name, 1, 14) == "GeneratorMenu_" then
+        if gui:IsA("BillboardGui") and gui.Name == "GeneratorMenu_Generator" then
             gui:Destroy()
         end
     end
