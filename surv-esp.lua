@@ -10,7 +10,7 @@ while _G.survivors_esp do
 		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
 			if player.Team.Name == "Survivors" then
 				if not workspace[player.Name]:FindFirstChild("SurvivorHighlight") then
-					h = Instance.new("Highlight")
+					local h = Instance.new("Highlight")
 					h.Name = "SurvivorHighlight"
 					h.FillColor = player.TeamColor.Color
 					h.OutlineColor = player.TeamColor.Color
@@ -24,5 +24,4 @@ while _G.survivors_esp do
 		end
 	end
 	task.wait(1)
-	end
-end)
+end
