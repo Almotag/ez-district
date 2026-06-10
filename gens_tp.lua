@@ -138,7 +138,7 @@ while _G.gens_tp do
         end
     end
     
-    local generatorsFolder = Workspace:FindFirstChild("Generators")
+    local generatorsFolder = Workspace.Map:FindFirstChild("Generators")
     if generatorsFolder then
         for _, generator in ipairs(generatorsFolder:GetChildren()) do
             createGeneratorMenu(generator)
