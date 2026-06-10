@@ -22,3 +22,12 @@ while _G.survivors_esp do
 	end
 	task.wait(1)
 end
+
+for _, player in pairs(game.Players:GetPlayers()) do
+	if workspace:FindFirstChild(player.Name) then
+		local highlight = workspace[player.Name]:FindFirstChild("SurvivorHighlight")
+		if highlight then
+			highlight:Destroy()
+		end
+	end
+end
