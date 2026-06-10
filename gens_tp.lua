@@ -4,7 +4,6 @@ end
 
 while _G.gens_tp do
     local TweenService = game:GetService("TweenService")
-    local VirtualInputManager = game:GetService("VirtualInputManager")
     local Players = game:GetService("Players")
     local Workspace = game:GetService("Workspace")
     
@@ -20,16 +19,6 @@ while _G.gens_tp do
     
     local function getButtonPosition(index)
         return positions[index] or UDim2.new(0.5, -17, 0.5, -17)
-    end
-    
-    local function simulateLeftClick()
-        local camera = Workspace.CurrentCamera
-        local viewport = camera.ViewportSize
-        local x = viewport.X / 2
-        local y = viewport.Y / 2
-    
-        VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, game, 0)
-        VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, game, 0)
     end
     
     local function createGeneratorMenu(generator)
@@ -115,10 +104,7 @@ while _G.gens_tp do
         local function teleportToPoint(pointCFrame)
             humanoidRootPart.CFrame = pointCFrame
             wait(0.5)
-            simulateLeftClick()
-        end
-    
-        mainButton.MouseButton1Click:Connect(function()
+
             if opened then
                 closeMenu()
             else
