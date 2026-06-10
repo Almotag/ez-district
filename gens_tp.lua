@@ -2,10 +2,6 @@ if _G.gens_tp == nil then
     _G.gens_tp = false
 end
 
-if _G.gens_tp then
-    print("GEN TP ACTIVE")
-end
-
 while _G.gens_tp do
     local TweenService = game:GetService("TweenService")
     local VirtualInputManager = game:GetService("VirtualInputManager")
