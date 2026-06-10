@@ -10,7 +10,7 @@ while _G.killer_esp do
 		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
 			if player.Team.Name == "Killer" then
 				if not workspace[player.Name]:FindFirstChild("KillerHighlight") then
-					h = Instance.new("Highlight")
+					local h = Instance.new("Highlight")
 					h.Name = "KillerHighlight"
 					h.FillColor = player.TeamColor.Color
 					h.OutlineColor = player.TeamColor.Color
@@ -24,4 +24,13 @@ while _G.killer_esp do
 		end
 	end
 	task.wait(1)
+end
+
+for _, player in pairs(game.Players:GetPlayers()) do
+	if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
+		local highlight = workspace[player.Name]:FindFirstChild("KillerHighlight")
+		if highlight then
+			highlight:Destroy()
+		end
+	end
 end
