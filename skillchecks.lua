@@ -1,7 +1,7 @@
 local VirtualInputManager = game:GetService("VirtualInputManager")
 local lplayer = game.Players.LocalPlayer
 
-_G.skillchecks = nil
+_G.skillchecks = false
 
 while _G.skillchecks do
 	local gui = lplayer.PlayerGui:FindFirstChild("SkillCheckPromptGui")
