@@ -1,9 +1,6 @@
 if _G.survivors_esp == nil then
 	_G.survivors_esp = false
 end
-if _G.survivors_esp then
-	print("ESP Active")
-end
 
 while _G.survivors_esp do
 	for _, player in pairs(game.Players:GetPlayers()) do
