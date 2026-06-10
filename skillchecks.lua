@@ -18,3 +18,5 @@ while _G.skillchecks == true do
 	print("SKILLCHECKS ACTIVE")
 	task.wait(0.01)
 end
+
+print("Script fonctionnel")
