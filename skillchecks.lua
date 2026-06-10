@@ -3,7 +3,7 @@ local lplayer = game.Players.LocalPlayer
 
 _G.skillchecks = nil
 
-while _G.skillchecks == true do
+if _G.skillchecks == true do
 	local gui = lplayer.PlayerGui:FindFirstChild("SkillCheckPromptGui")
 	
 	if gui then
