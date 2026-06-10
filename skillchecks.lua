@@ -1,8 +1,8 @@
 local VirtualInputManager = game:GetService("VirtualInputManager")
 local lplayer = game.Players.LocalPlayer
 
-if _G.skillchecks = nil then
-    _G.skillchecks = false
+if _G.skillchecks == nil then
+	_G.skillchecks = false
 end
 
 while _G.skillchecks do
