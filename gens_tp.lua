@@ -144,3 +144,14 @@ while _G.gens_tp do
     end
     task.wait(1)
 end
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local playerGui = Player and Player:FindFirstChild("PlayerGui")
+if playerGui then
+    for _, gui in ipairs(playerGui:GetChildren()) do
+        if gui:IsA("BillboardGui") and string.sub(gui.Name, 1, 14) == "GeneratorMenu_" then
+            gui:Destroy()
+        end
+    end
+end
