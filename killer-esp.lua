@@ -1,4 +1,11 @@
-while true do
+if _G.killer_esp == nil then
+	_G.killer_esp = false
+end
+if _G.killer_esp then
+	print("ESP Active")
+end
+
+while _G.killer_esp do
 	for _, player in pairs(game.Players:GetPlayers()) do
 		if player ~= game.Players.LocalPlayer and workspace:FindFirstChild(player.Name) then
 			if player.Team.Name == "Killer" then
