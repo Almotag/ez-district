@@ -138,8 +138,13 @@ while _G.gens_tp do
         end
     end
     
-    for _, generator in ipairs(generatorsFolder:GetChildren()) do
-        createGeneratorMenu(generator)
+    local generatorsFolder = Workspace:FindFirstChild("Generators")
+    if generatorsFolder then
+        for _, generator in ipairs(generatorsFolder:GetChildren()) do
+            createGeneratorMenu(generator)
+        end
+    else
+        warn("generators folder not found in Workspace")
     end
     task.wait(1)
 end
