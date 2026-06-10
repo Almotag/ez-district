@@ -114,7 +114,7 @@ while _G.gens_tp do
     
         local function teleportToPoint(pointCFrame)
             humanoidRootPart.CFrame = pointCFrame
-            wait(0.2)
+            wait(0.5)
             simulateLeftClick()
         end
     
