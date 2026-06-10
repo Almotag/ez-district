@@ -25,7 +25,7 @@ end
 
 for _, player in pairs(game.Players:GetPlayers()) do
 	if workspace:FindFirstChild(player.Name) then
-		local highlight = workspace[player.Name]:FindFirstChild("SurvivorHighlight")
+		local highlight = workspace[player.Name].SurvivorHighlight
 		if highlight then
 			highlight:Destroy()
 		end
