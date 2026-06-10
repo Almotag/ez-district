@@ -1,3 +1,3 @@
-if printtext == true then
+if _G.printtext == true then
   print("WORKING")
 end
