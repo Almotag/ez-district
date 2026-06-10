@@ -5,6 +5,10 @@ if _G.skillchecks == nil then
 	_G.skillchecks = false
 end
 
+if _G.skillchecks then
+    print("SKILLCHECKS ACTIVE")
+end
+
 while _G.skillchecks do
 	local gui = lplayer.PlayerGui:FindFirstChild("SkillCheckPromptGui")
 	
@@ -17,6 +21,5 @@ while _G.skillchecks do
 			VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
 		end
 	end
-	print("SKILLCHECKS ACTIVE")
-	task.wait(0.01)
+	task.wait(0.1)
 end
