@@ -3,7 +3,7 @@ local lplayer = game.Players.LocalPlayer
 
 _G.skillchecks = nil
 
-if _G.skillchecks == true do
+if _G.skillchecks == true then
 	local gui = lplayer.PlayerGui:FindFirstChild("SkillCheckPromptGui")
 	
 	if gui then
@@ -18,5 +18,3 @@ if _G.skillchecks == true do
 	print("SKILLCHECKS ACTIVE")
 	task.wait(0.01)
 end
-
-print("Script fonctionnel")
