@@ -9,14 +9,24 @@ end
 while _G.gens_esp do
     for _, generator in ipairs(generatorsFolder:GetChildren()) do
         if generator:IsA("Model") or generator:IsA("BasePart") then
-            local highlight = Instance.new("Highlight")
-            highlight.Adornee = generator
-            highlight.FillColor = Color3.fromRGB(255, 255, 0)
-            highlight.OutlineColor = Color3.fromRGB(255, 255, 0)
-            highlight.FillTransparency = 0.6
-            highlight.OutlineTransparency = 0.2
-            highlight.Parent = Workspace
+            if not generator:FindFirstChild("GeneratorHighlight") then
+                local highlight = Instance.new("Highlight")
+                highlight.Name = "GeneratorHighlight"
+                highlight.Adornee = generator
+                highlight.FillColor = Color3.fromRGB(255, 255, 0)
+                highlight.OutlineColor = Color3.fromRGB(255, 255, 0)
+                highlight.FillTransparency = 0.6
+                highlight.OutlineTransparency = 0.2
+                highlight.Parent = generator
+            end
         end
     end
     task.wait(1)
+end
+
+for _, generator in ipairs(generatorsFolder:GetChildren()) do
+    local highlight = generator:FindFirstChild("GeneratorHighlight")
+    if highlight then
+        highlight:Destroy()
+    end
 end
