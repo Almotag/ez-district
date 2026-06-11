@@ -21,5 +21,5 @@ while _G.skillchecks do
 			VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
 		end
 	end
-	task.wait(0.1)
+	task.wait(0.01)
 end
