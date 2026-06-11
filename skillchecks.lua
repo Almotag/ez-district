@@ -16,7 +16,7 @@ while _G.skillchecks do
 		local line = gui.Check.Line
 		local goal = gui.Check.Goal
 
-		if line.Rotation - 105 >= goal.Rotation then
+		if line.Rotation - 100 >= goal.Rotation then
 			VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
 			VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
 		end
